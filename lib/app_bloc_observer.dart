@@ -13,4 +13,16 @@ class AppBlocObserver extends BlocObserver {
     super.onChange(bloc, change);
     debugPrint('Bloc onChange => which bloc is changed $bloc  $change');
   }
+
+  @override
+  void onTransition(Bloc bloc, Transition transition) {
+    super.onTransition(bloc, transition);
+    debugPrint('Bloc onTransition => which bloc is changed $bloc  $transition');
+  }
+
+  @override
+  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
+    super.onError(bloc, error, stackTrace);
+    debugPrint('Bloc onError => which bloc is changed $bloc  $error');
+  }
 }
